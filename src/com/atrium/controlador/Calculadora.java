@@ -20,6 +20,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 import com.atrium.modelo.Modelo;
+import java.awt.Window.Type;
 
 public class Calculadora extends JFrame implements ActionListener {
 	private JPanel panel_visor;
@@ -47,6 +48,11 @@ public class Calculadora extends JFrame implements ActionListener {
 	private Modelo model;
 
 	public Calculadora() {
+		setType(Type.UTILITY);
+		setTitle("Calculadora");
+		getContentPane().setBackground(new Color(0, 153, 255));
+		setForeground(new Color(51, 51, 255));
+		setBackground(new Color(51, 51, 204));
 
 		crear_Interface();
 
@@ -59,6 +65,7 @@ public class Calculadora extends JFrame implements ActionListener {
 		getContentPane().setLayout(null);
 
 		panel_visor = new JPanel();
+		panel_visor.setBackground(new Color(0, 153, 204));
 		panel_visor.setBounds(0, 0, 334, 71);
 		getContentPane().add(panel_visor);
 		panel_visor.setLayout(null);
@@ -78,6 +85,7 @@ public class Calculadora extends JFrame implements ActionListener {
 		panel_teclado.setLayout(null);
 
 		panel_numeros = new JPanel();
+		panel_numeros.setBackground(new Color(0, 153, 204));
 		panel_numeros.setBounds(0, 0, 234, 291);
 		panel_teclado.add(panel_numeros);
 		panel_numeros.setLayout(new GridLayout(0, 3, 1, 1));
@@ -133,6 +141,7 @@ public class Calculadora extends JFrame implements ActionListener {
 		panel_numeros.add(boton_punto);
 
 		panel_operaciones = new JPanel();
+		panel_operaciones.setBackground(new Color(0, 153, 204));
 		panel_operaciones.setBounds(238, 0, 96, 213);
 		panel_teclado.add(panel_operaciones);
 		panel_operaciones.setLayout(new GridLayout(0, 2, 1, 1));
